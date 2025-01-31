@@ -293,12 +293,12 @@ const second = 1000,
   minute = second * 60,
   hour = minute * 60,
   day = hour * 24;
-let countDown = new Date('Oct 22, 2023 00:00:00').getTime(),
+let countDown = new Date('Feb 5, 2024 00:00:00').getTime(),
   x = setInterval(function () {
     let now = new Date().getTime(),
       distance = countDown - now;
-    // document.getElementById('days').innerText = Math.floor(distance / (day)),
-    document.getElementById('hours').innerText = Math.floor(distance / (hour)),
+      document.getElementById('days').innerText = Math.floor(distance / (day)),
+      document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
       document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
       document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
 
@@ -349,7 +349,7 @@ const _slideDua = function () {
         _slideTiga();
       }, 1000);
     })
-  }, 40000);
+  }, 37500);
 };
 
 const _slideTiga = function () {
@@ -368,7 +368,7 @@ const _slideTiga = function () {
         _slideEmpat();
       }, 1000);
     })
-  }, 43000);
+  }, 25500);
 }
 
 function getRandomPosition(element) {
@@ -440,7 +440,10 @@ new TypeIt("#teks1", {
 " ",
 "May your days always be accompanied by boundless love.",
 " ",
-"May every step you take be eased until you achieve what you desire."],
+"May every step you take be eased until you achieve what you desire.",
+" ",
+"            Tap on Screen to Continue." 
+],
   startDelay: 4000,
   speed: 75,
   waitUntilVisible: true
@@ -451,7 +454,9 @@ new TypeIt("#teks2", {
 " ",
 "May Lord bless your life, thank you for persevering this far.",
 " ",
-"- Wish all you the best Vishwa! 🤍"],
+"- Wish you all the best Vishwa! 🤍",
+" ",
+"            Tap on Screen to Continue."],
   startDelay: 2000,
   speed: 75,
   waitUntilVisible: true
@@ -462,7 +467,7 @@ new TypeIt("#trims", {
   strings: ["Thank you."],
   startDelay: 2000,
   speed: 150,
-  loop: false,
+  loop: true,
   waitUntilVisible: true,
 }).go();
 
